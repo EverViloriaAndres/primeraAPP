@@ -1,0 +1,43 @@
+<p>
+  Este es el otro componente del modulo principal, es el componente empleados
+</p>
+<h1>{{ nomEmpleado }}</h1>
+<p>Nopomuceno es de la empresa: {{ empresa.value }}</p>
+
+<input
+  type="text"
+  (keyup)="(0)"
+  #empresa
+  [disabled]="p_binding_disabledInput"
+/>
+
+<!--<input type="text" (keyup)="insertarEmpresa(empresa.value)" #empresa />
+Es mejor con esta linea comentada, asi se llama una funcion al hacer keyuUp 
+sy se insertaria en el p, donde va el nombre de la empresa, el valor que 
+devuelve la funcion, es mas orientado a obj.
+Como esta hecho, es como si al ejecutarse el evento, se devolviero al flujo
+ de ejecucion arriba, y como ya el imput tiene valor, entonces si se agrega el nombre de la empresa .
+-->
+
+<!--Property Binding: Cambiar el estado del check-->
+<input type="checkbox" (click)="checked()" />
+
+<br />
+
+<p>Usuario registrado:{{ e_binding_siOno }}</p>
+
+<p>Registrado:</p>
+<input type="radio" value="SI" name="Registro" (click)="siOno($event)" />
+<br />
+<p>No Registrado:</p>
+<input type="radio" value="NO" name="Registro" (click)="siOno($event)" />
+
+<!--Two-Way Binding O Binding Bidireccional-->
+<!--Esto nos permite simplificar muchisimo el codigo, no es necesario usar eventos para enviar info en las dos direcciones.-->
+
+<h1>Binding Bidireccional o Two-Way Binding</h1>
+<br />
+<h2>Nombre Del colombiano que juega en el liverpool</h2>
+<br />
+<h4>Futbolista: {{ binding_B_Futbolista }}</h4>
+<input type="text" [(ngModel)]="binding_B_Futbolista" />
